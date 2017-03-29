@@ -59,6 +59,18 @@ public class Reprezentatie implements Serializable {
     return false;
   }
 
+  public List<Bilet> getBileteDisponibile(){
+
+    List<Bilet> bileteLibere = new ArrayList<>();
+
+    for(Bilet aBilet : bilete){
+      if(aBilet.getMyLoc().getOcupat()==false)
+        bileteLibere.add(aBilet);
+    }
+
+    return bileteLibere;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
