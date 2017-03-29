@@ -34,6 +34,10 @@ public class Reprezentatie implements Serializable {
 
   public void addBilet(Bilet bilet) throws Exception {
 
+  	if(bilet==null){
+      throw new Exception("Bilet is null");
+    }
+
     if(this.bilete.size()<nrLocuri)
     {
       this.bilete.add(bilet);
