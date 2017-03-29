@@ -8,6 +8,12 @@ public class Bilet {
   private Reprezentatie myReprezentatie;
   private Loc myLoc;
 
+  public Bilet(Integer pret, Reprezentatie myReprezentatie, Loc myLoc) {
+    this.pret = pret;
+    this.myReprezentatie = myReprezentatie;
+    this.myLoc = myLoc;
+  }
+
     @Override
   public boolean equals(Object o) {
     if (this == o) return true;
