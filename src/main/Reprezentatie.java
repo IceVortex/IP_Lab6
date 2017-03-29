@@ -31,7 +31,7 @@ public class Reprezentatie implements Serializable {
   }
 
   public void addBilet(Bilet bilet){
-    this.bilete.equals(bilet);
+    this.bilete.add(bilet);
   }
   public boolean searchByBilet(Bilet bilet){
     for(Bilet b:getBilete()){
