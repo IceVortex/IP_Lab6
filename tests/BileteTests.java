@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Created by roungureanu on 29-Mar-17.
  */
-class MainTest {
+class BileteTests {
     @Test
     void sum() {
         Main main = new Main();

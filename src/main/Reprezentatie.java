@@ -1,10 +1,7 @@
 package main;
 
-<<<<<<< HEAD
 import java.util.List;
-=======
 import java.io.Serializable;
->>>>>>> origin/master
 import java.util.Vector;
 
 public class Reprezentatie implements Serializable {
