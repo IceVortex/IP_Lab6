@@ -8,7 +8,7 @@ public class Bilet implements Serializable {
   private Integer pret;
   private Reprezentatie myReprezentatie;
   private Loc myLoc;
-]
+
   Bilet(){}
   Bilet(Integer pret, Reprezentatie reprezentatie, Loc loc) {
     this.myLoc = loc;
@@ -27,7 +27,7 @@ public class Bilet implements Serializable {
     if (myReprezentatie != null ? !myReprezentatie.equals(bilet.myReprezentatie) : bilet.myReprezentatie != null)
       return false;
     return myLoc != null ? myLoc.equals(bilet.myLoc) : bilet.myLoc == null;
->>>>>>> origin/master
+
   }
 
   public Integer getPret() {
