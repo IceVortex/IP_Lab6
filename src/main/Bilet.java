@@ -83,6 +83,10 @@ public class Bilet implements Serializable {
     }
   }
 
+  public Loc getMyLoc() {
+    return myLoc;
+  }
+
   @Override
   public String toString() {
     return "Bilet{" +
