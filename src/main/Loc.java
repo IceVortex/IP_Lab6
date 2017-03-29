@@ -31,4 +31,13 @@ public class Loc implements Serializable {
     result = 31 * result + mySala.hashCode();
     return result;
   }
+  @Override
+  public String toString() {
+    return "Loc{" +
+            "nr=" + nr +
+            ", ocupat=" + ocupat +
+            ", myBilet=" + myBilet +
+            ", mySala=" + mySala +
+            '}';
+  }
 }

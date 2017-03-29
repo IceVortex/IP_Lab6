@@ -1,6 +1,12 @@
 package main;
 
 import java.util.List;
+<<<<<<< HEAD
+=======
+
+import java.io.Serializable;
+
+>>>>>>> origin/master
 import java.util.Vector;
 import java.io.Serializable;
 
@@ -62,5 +68,14 @@ public class Reprezentatie implements Serializable {
     result = 31 * result + sala.hashCode();
     result = 31 * result + bilete.hashCode();
     return result;
+  }
+  public String toString() {
+    return "Reprezentatie{" +
+            "nrLocuri=" + nrLocuri +
+            ", data='" + data + '\'' +
+            ", ora=" + ora +
+            ", sala=" + sala +
+            ", bilete=" + bilete +
+            '}';
   }
 }

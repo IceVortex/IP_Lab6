@@ -45,4 +45,12 @@ public class Sala {
   public void setLocuri(Vector<Loc> locuri) {
     this.locuri = locuri;
   }
+
+  @Override
+  public String toString() {
+    return "Sala{" +
+            "nume='" + nume + '\'' +
+            ", locuri=" + locuri +
+            '}';
+  }
 }
