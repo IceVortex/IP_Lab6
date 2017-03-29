@@ -1,15 +1,10 @@
 package main;
 
 import java.util.List;
-<<<<<<< HEAD
-=======
 
 import java.io.Serializable;
 
->>>>>>> origin/master
 import java.util.Vector;
-import java.io.Serializable;
-
 public class Reprezentatie implements Serializable {
 
   private final Integer nrLocuri;
