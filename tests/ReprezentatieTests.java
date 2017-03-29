@@ -45,4 +45,25 @@ class ReprezentatieTests {
         Assert.assertEquals(repr.getBilete(), bilete);
     }
 
+    @Test
+    void adaugaBileteMultiple() {
+        Sala s = new Sala();
+        Loc l = new Loc();
+        Reprezentatie repr = new Reprezentatie("10-01-2017", 14, s, new Vector<Bilet>(), 2);
+
+        Bilet b1 = new Bilet(100, repr, l);
+        Bilet b2 = new Bilet(150, repr, l);
+        Bilet b3 = new Bilet(130, repr, l);
+
+        repr.addBilet(b1);
+        repr.addBilet(b2);
+        repr.addBilet(b3);
+
+        Vector<Bilet> bilete = new Vector<Bilet>();
+        bilete.add(b1);
+        bilete.add(b2);
+
+        Assert.assertEquals(repr.getBilete(), bilete);
+    }
+
 }
