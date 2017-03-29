@@ -42,7 +42,7 @@ public class Bilet implements Serializable {
     return result;
   }
 
-  void save(String path) {
+  public void save(String path) {
 
     try {
       FileOutputStream fileOut = new FileOutputStream(path);
@@ -60,7 +60,7 @@ public class Bilet implements Serializable {
     }
   }
 
-  void load(String path){
+  public void load(String path){
 
     Bilet bilet = null;
     try{
