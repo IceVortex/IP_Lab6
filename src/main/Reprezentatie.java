@@ -5,9 +5,7 @@ import java.util.Vector;
 public class Reprezentatie {
 
   private String data;
-
   private Integer ora;
-
   private Sala sala;
   private Vector<Bilet>  bilete;
 
@@ -50,7 +48,23 @@ public class Reprezentatie {
   public void setBilete(Vector<Bilet> bilete) {
     this.bilete = bilete;
   }
-
+  public void addBilet(Bilet bilet){
+    this.bilete.equals(bilet);
+  }
+  public int searchByBilet(Bilet bilet){
+    for(Bilet b:getBilete()){
+      if(b.equals(bilet))
+        return 1;
+    }
+    return 0;
+  }
+  public Reprezentatie(String data, Integer ora, Sala sala, Vector<Bilet> bilete, Integer nrLocuri) {
+    this.data = data;
+    this.ora = ora;
+    this.sala = sala;
+    this.bilete = bilete;
+    this.nrLocuri = nrLocuri;
+  }
   private Integer nrLocuri;
 
 }
