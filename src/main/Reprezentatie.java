@@ -1,8 +1,9 @@
 package main;
 
+import java.io.Serializable;
 import java.util.Vector;
 
-public class Reprezentatie {
+public class Reprezentatie implements Serializable {
 
   private String data;
 
