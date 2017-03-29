@@ -34,6 +34,14 @@ public class Bilet implements Serializable {
     return pret;
   }
 
+  @Override
+  public int hashCode() {
+    int result = pret.hashCode();
+    result = 31 * result + myReprezentatie.hashCode();
+    result = 31 * result + myLoc.hashCode();
+    return result;
+  }
+
   void save(String path) {
 
     try {
@@ -75,4 +83,12 @@ public class Bilet implements Serializable {
     }
   }
 
+  @Override
+  public String toString() {
+    return "Bilet{" +
+            "pret=" + pret +
+            ", myReprezentatie=" + myReprezentatie +
+            ", myLoc=" + myLoc +
+            '}';
+  }
 }

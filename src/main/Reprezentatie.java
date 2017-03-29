@@ -4,6 +4,9 @@ import java.util.List;
 import java.io.Serializable;
 import java.util.Vector;
 
+import java.io.Serializable;
+
+import java.util.Vector;
 public class Reprezentatie implements Serializable {
 
   private final Integer nrLocuri;
@@ -30,7 +33,7 @@ public class Reprezentatie implements Serializable {
   }
 
   public void addBilet(Bilet bilet){
-    this.bilete.equals(bilet);
+    this.bilete.add(bilet);
   }
   public boolean searchByBilet(Bilet bilet){
     for(Bilet b:getBilete()){
@@ -40,4 +43,36 @@ public class Reprezentatie implements Serializable {
     return false;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Reprezentatie that = (Reprezentatie) o;
+
+    if (!nrLocuri.equals(that.nrLocuri)) return false;
+    if (!data.equals(that.data)) return false;
+    if (!ora.equals(that.ora)) return false;
+    if (!sala.equals(that.sala)) return false;
+    return bilete.equals(that.bilete);
+  }
+
+  @Override
+  public int hashCode() {
+    int result = nrLocuri.hashCode();
+    result = 31 * result + data.hashCode();
+    result = 31 * result + ora.hashCode();
+    result = 31 * result + sala.hashCode();
+    result = 31 * result + bilete.hashCode();
+    return result;
+  }
+  public String toString() {
+    return "Reprezentatie{" +
+            "nrLocuri=" + nrLocuri +
+            ", data='" + data + '\'' +
+            ", ora=" + ora +
+            ", sala=" + sala +
+            ", bilete=" + bilete +
+            '}';
+  }
 }

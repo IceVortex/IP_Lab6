@@ -14,6 +14,21 @@ public class Database {
         return myBilet;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Database database = (Database) o;
+
+        return myBilet.equals(database.myBilet);
+    }
+
+    @Override
+    public int hashCode() {
+        return myBilet.hashCode();
+    }
+
     public void setMyBilet(Vector<Bilet> myBilet) {
         this.myBilet = myBilet;
     }
