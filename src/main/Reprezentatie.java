@@ -30,9 +30,27 @@ public class Reprezentatie implements Serializable {
     this.nrLocuri = nrLocuri;
   }
 
-  public void addBilet(Bilet bilet){
-    this.bilete.add(bilet);
+  public void addBilet(Bilet bilet) throws Exception {
+
+    if(this.bilete.size()<nrLocuri)
+    {
+      this.bilete.add(bilet);
+    }
+    else{
+      throw new Exception("NU SE MAI POT INSERA BILETE !");
+    }
   }
+
+   public void removeBilet(int index) throws Exception {
+
+    if (index < 0) {
+      throw new Exception("INDEX NEGATIVE");
+    } else {
+      bilete.remove(bilete.get(index));
+    }
+  }
+
+
   public boolean searchByBilet(Bilet bilet){
     for(Bilet b:getBilete()){
       if(b.equals(bilet))
