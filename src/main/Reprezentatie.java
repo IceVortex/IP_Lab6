@@ -1,9 +1,13 @@
 package main;
 
+<<<<<<< HEAD
 import java.util.List;
+=======
+import java.io.Serializable;
+>>>>>>> origin/master
 import java.util.Vector;
 
-public class Reprezentatie {
+public class Reprezentatie implements Serializable {
 
   private final Integer nrLocuri;
 
@@ -31,12 +35,12 @@ public class Reprezentatie {
   public void addBilet(Bilet bilet){
     this.bilete.equals(bilet);
   }
-  public int searchByBilet(Bilet bilet){
+  public boolean searchByBilet(Bilet bilet){
     for(Bilet b:getBilete()){
       if(b.equals(bilet))
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
   }
 
 }

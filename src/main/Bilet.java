@@ -1,17 +1,19 @@
 package main;
 
+import java.io.*;
 import java.util.Vector;
 
-public class Bilet {
+public class Bilet implements Serializable {
 
-  private Integer pret=1;
+  private Integer pret;
   private Reprezentatie myReprezentatie;
   private Loc myLoc;
 
-  public Bilet(Integer pret, Reprezentatie myReprezentatie, Loc myLoc) {
+  Bilet(){}
+  Bilet(Integer pret, Reprezentatie reprezentatie, Loc loc) {
+    this.myLoc = loc;
+    this.myReprezentatie = reprezentatie;
     this.pret = pret;
-    this.myReprezentatie = myReprezentatie;
-    this.myLoc = myLoc;
   }
 
     @Override
@@ -25,28 +27,52 @@ public class Bilet {
     if (myReprezentatie != null ? !myReprezentatie.equals(bilet.myReprezentatie) : bilet.myReprezentatie != null)
       return false;
     return myLoc != null ? myLoc.equals(bilet.myLoc) : bilet.myLoc == null;
+
   }
 
   public Integer getPret() {
     return pret;
   }
 
-  public void setPret(Integer pret) {
-    this.pret = pret;
+  void save(String path) {
+
+    try {
+      FileOutputStream fileOut = new FileOutputStream(path);
+      ObjectOutputStream outObject = new ObjectOutputStream(fileOut);
+
+      outObject.writeObject(this);
+      outObject.close();
+      fileOut.close();
+
+      System.out.printf("Serialized data is saved in "+ path+'\n');
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
-  public Reprezentatie getMyReprezentatie() {
-    return myReprezentatie;
+  void load(String path){
+
+    Bilet bilet = null;
+    try{
+      FileInputStream inputFileStream = new FileInputStream(path);
+      ObjectInputStream objectInputStream = new ObjectInputStream(inputFileStream);
+      bilet = (Bilet) objectInputStream.readObject();
+      this.myLoc = bilet.myLoc;
+      this.myReprezentatie = bilet.myReprezentatie;
+      this.pret = bilet.pret;
+
+      objectInputStream.close();
+      inputFileStream.close();
+
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
   }
 
-  public void setMyReprezentatie(Reprezentatie myReprezentatie) {
-    this.myReprezentatie = myReprezentatie;
-  }
-  public Loc getMyLoc() {
-    return myLoc;
-  }
-
-  public void setMyLoc(Loc myLoc) {
-    this.myLoc = myLoc;
-  }
 }
