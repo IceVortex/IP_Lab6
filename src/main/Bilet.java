@@ -9,8 +9,8 @@ public class Bilet implements Serializable {
   private Reprezentatie myReprezentatie;
   private Loc myLoc;
 
-  Bilet(){}
-  Bilet(Integer pret, Reprezentatie reprezentatie, Loc loc) {
+  public Bilet(){}
+  public Bilet(Integer pret, Reprezentatie reprezentatie, Loc loc) {
     this.myLoc = loc;
     this.myReprezentatie = reprezentatie;
     this.pret = pret;
