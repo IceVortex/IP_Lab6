@@ -15,7 +15,11 @@ class ReprezentatieTests {
 
         Bilet b = null;
 
-        repr.addBilet(b);
+        try {
+            repr.addBilet(b);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         Vector<Bilet> bilete = new Vector<Bilet>();
 
@@ -33,9 +37,13 @@ class ReprezentatieTests {
         Bilet b2 = new Bilet(150, repr, l);
         Bilet b3 = new Bilet(130, repr, l);
 
-        repr.addBilet(b1);
-        repr.addBilet(b2);
-        repr.addBilet(b3);
+        try {
+            repr.addBilet(b1);
+            repr.addBilet(b2);
+            repr.addBilet(b3);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         Vector<Bilet> bilete = new Vector<Bilet>();
         bilete.add(b1);
@@ -55,15 +63,66 @@ class ReprezentatieTests {
         Bilet b2 = new Bilet(150, repr, l);
         Bilet b3 = new Bilet(130, repr, l);
 
-        repr.addBilet(b1);
-        repr.addBilet(b2);
-        repr.addBilet(b3);
+        try {
+            repr.addBilet(b1);
+            repr.addBilet(b2);
+            repr.addBilet(b3);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         Vector<Bilet> bilete = new Vector<Bilet>();
         bilete.add(b1);
         bilete.add(b2);
 
         Assert.assertEquals(repr.getBilete(), bilete);
+    }
+
+    @Test
+    void cautaBiletInexistent()
+    {
+        Sala s = new Sala();
+        Loc l = new Loc();
+        Reprezentatie r = new Reprezentatie("a", 1, s, new Vector<Bilet>(), 10);
+
+        Bilet b1 = new Bilet(10, r, l);
+        Bilet b2 = new Bilet(15, r, l);
+        Bilet b3 = new Bilet(14, r, l);
+        Bilet b4 = new Bilet(12, r, l);
+
+        try {
+            r.addBilet(b1);
+            r.addBilet(b3);
+            r.addBilet(b4);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Assert.assertEquals(r.searchByBilet(b2), false);
+    }
+
+
+    @Test
+    void cautaBiletExistent()
+    {
+        Sala s = new Sala();
+        Loc l = new Loc();
+        Reprezentatie r = new Reprezentatie("a", 1, s, new Vector<Bilet>(), 10);
+
+        Bilet b1 = new Bilet(10, r, l);
+        Bilet b2 = new Bilet(15, r, l);
+        Bilet b3 = new Bilet(14, r, l);
+        Bilet b4 = new Bilet(12, r, l);
+
+        try {
+            r.addBilet(b1);
+            r.addBilet(b3);
+            r.addBilet(b4);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Assert.assertEquals(r.searchByBilet(b1), true);
     }
 
 }
