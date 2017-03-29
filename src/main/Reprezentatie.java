@@ -51,12 +51,12 @@ public class Reprezentatie {
   public void addBilet(Bilet bilet){
     this.bilete.equals(bilet);
   }
-  public int searchByBilet(Bilet bilet){
+  public boolean searchByBilet(Bilet bilet){
     for(Bilet b:getBilete()){
       if(b.equals(bilet))
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
   }
   public Reprezentatie(String data, Integer ora, Sala sala, Vector<Bilet> bilete, Integer nrLocuri) {
     this.data = data;
