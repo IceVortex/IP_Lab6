@@ -43,4 +43,14 @@ public class Reprezentatie implements Serializable {
     return false;
   }
 
+  @Override
+  public String toString() {
+    return "Reprezentatie{" +
+            "nrLocuri=" + nrLocuri +
+            ", data='" + data + '\'' +
+            ", ora=" + ora +
+            ", sala=" + sala +
+            ", bilete=" + bilete +
+            '}';
+  }
 }

@@ -11,5 +11,13 @@ public class Loc implements Serializable {
     private Sala  mySala;
 
 
-
+  @Override
+  public String toString() {
+    return "Loc{" +
+            "nr=" + nr +
+            ", ocupat=" + ocupat +
+            ", myBilet=" + myBilet +
+            ", mySala=" + mySala +
+            '}';
+  }
 }

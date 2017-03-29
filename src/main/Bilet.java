@@ -75,4 +75,12 @@ public class Bilet implements Serializable {
     }
   }
 
+  @Override
+  public String toString() {
+    return "Bilet{" +
+            "pret=" + pret +
+            ", myReprezentatie=" + myReprezentatie +
+            ", myLoc=" + myLoc +
+            '}';
+  }
 }
